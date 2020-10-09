@@ -1,0 +1,14 @@
+.cakesForm{
+    margin:auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+.cakeRow{
+    padding:10px;
+}
+.cakeHeader{
+    text-align: center;
+}
+.warning{
+    text-align: center;
+}
