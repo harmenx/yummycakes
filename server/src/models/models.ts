@@ -1,5 +1,3 @@
-"use strict";
-
 export interface Cake {
     _id? : string,
     name: string,
@@ -7,4 +5,3 @@ export interface Cake {
     imageUrl : string,
     yumFactor: number
 }
-

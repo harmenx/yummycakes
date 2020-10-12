@@ -1,2 +1,3 @@
-export { getCakes, getCake, updateCake, createCake } from './api';
-
+export {
+  getCakes, getCake, updateCake, createCake,
+} from './api';
