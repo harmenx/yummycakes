@@ -26,14 +26,12 @@ var validation = function (cake) {
 var postCake = function (req, res, db) {
     var cake = req.body;
     if (validation(cake) === false) {
-        res.status(400).json({ message: "Incorrect format for cake" });
-        ;
+        res.status(400).json({ message: 'Incorrect format for cake' });
     }
-    ;
     delete cake._id;
-    db.findOne({ "name": cake.name }, function (error, result) {
+    db.findOne({ name: cake.name }, function (error, result) {
         if (result !== null) {
-            res.status(400).json({ message: "Cake already exists" });
+            res.status(400).json({ message: 'Cake already exists' });
         }
         else {
             db.insert(cake, function (error, result) {
@@ -47,10 +45,9 @@ var putCake = function (req, res, db) {
     if (validation(cake) === false) {
         res.status(400);
     }
-    ;
-    db.findOne({ "name": cake.name }, function (error, result) {
+    db.findOne({ name: cake.name }, function (error, result) {
         if (result !== null) {
-            res.status(400).json({ message: "Cake already exists" });
+            res.status(400).json({ message: 'Cake already exists' });
         }
         else {
             db.update({ _id: cake._id }, cake, undefined, function (error, result) {
@@ -69,5 +66,5 @@ module.exports = {
     getCakes: getCakes,
     postCake: postCake,
     putCake: putCake,
-    deleteCake: deleteCake
+    deleteCake: deleteCake,
 };

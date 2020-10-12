@@ -1,12 +1,13 @@
 "use strict";
-var express = require("express");
+var express = require('express');
 var app = express();
-var Datastore = require('nedb'), db = new Datastore({ filename: './src/cakes.json', autoload: true });
-var main = require('./controllers/main');
+var Datastore = require('nedb');
+var db = new Datastore({ filename: './src/cakes.json', autoload: true });
 var helmet = require('helmet');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var morgan = require('morgan');
+var main = require('./controllers/main');
 var whitelist = ['http://localhost:3000'];
 var corsOptions = {
     origin: function (origin, callback) {
@@ -16,7 +17,7 @@ var corsOptions = {
         else {
             callback(new Error('Not allowed by CORS'));
         }
-    }
+    },
 };
 app.use(helmet());
 app.use(cors(corsOptions));
